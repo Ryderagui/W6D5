@@ -1,0 +1,26 @@
+<h1>Cat Rental Kennel</h1>
+
+
+<%if @cats.empty?%>
+    <p><%=@cat.name%> The kennel is empty</p>
+
+<%else%>
+<table> 
+    <tr>
+        <th>Name</th>
+        <th>Color</th>
+        <th>Age</th>
+        <th>Sex</th>
+        <th>Description</th>
+    </tr>
+    <%@cats.each do |cat|%>
+    <tr>
+        <td><a href="/cats/<%=cat.id%>"><%=cat.name%></a></td>
+        <td><%=cat.color%></td>
+        <td><%=cat.age%></td>
+        <td><%=cat.sex%></td>
+        <td><%=cat.description%></td>
+    </tr>
+    <%end%>
+</table>
+<%end%>
